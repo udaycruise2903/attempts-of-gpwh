@@ -10,6 +10,5 @@ maxDie = 6
 main :: IO ()
 main = do
     dieRoll <- randomRIO (minDie,maxDie)
-    putStrLn (show dieRoll)
-    replicateM 10 (randomIO :: IO Float) >>= print
+    putStrLn show dieRoll
     

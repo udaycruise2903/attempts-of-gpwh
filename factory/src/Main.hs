@@ -25,15 +25,15 @@ renderHtml tool = mconcat ["<h2>",toolName,"</h2>"
         toolCount = show (cost tool)
 
 ScrewDriver :: Tool
-ScrewDriver = Tool
+ScrewDriver = ScrewDriver
   { name = "Screw Driver"
   , description = "left arm for face punching!"
   , cost = 400.00
   , count = 3
   }
-  
+
 SledgeHammer :: Tool
-SledgeHammer = Tool
+SledgeHammer = SledgeHammer
     { name = "Sledge Hammer"
     , description = "right arm for kind hand gestures"
     , cost = 625.00
@@ -41,7 +41,7 @@ SledgeHammer = Tool
     }
   
 DrillComboKit :: Tool
-DrillComboKit = Tool
+DrillComboKit = DrillComboKit
     { name = "Drill Combo Kit"
     , description = "this head looks mad"
     , cost = 5092.25
@@ -73,9 +73,9 @@ ScrewDriverIO :: IO Tool
 ScrewDriverIO = return ScrewDriver
 
 htmlSnippet :: IO Html
-htmlSnippet = renderHtml <$> ScrewDriverIO
+htmlSnippet = renderHtml <$> ScrewDriverIO  
 
 main :: IO ()
 main = do
   putStrLn "factory"
-  print "----"
+  print htmlSnippet
